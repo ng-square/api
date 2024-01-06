@@ -5,7 +5,7 @@ const cors = require("cors");
 app.use(cors());
 app.use(express.static("public"));
 
-app.get("/api", (req, res) => {
+app.get("/api/pizza", (req, res) => {
   res.json([
     {
       id: 1,
@@ -38,6 +38,10 @@ app.get("/api", (req, res) => {
       image: "src/app/assets/Margherita.jpeg",
     },
   ]);
+});
+
+app.post("/api/pizza", (req, res) => {
+  res.status(200).send();
 });
 
 app.listen(process.env.PORT || 3000);

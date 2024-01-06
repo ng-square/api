@@ -1,16 +1,40 @@
 const app = require("express")();
-const { v4 } = require("uuid");
 
 app.get("/api", (req, res) => {
-  const path = `/api/item/${v4()}`;
-  res.setHeader("Content-Type", "text/html");
-  res.setHeader("Cache-Control", "s-max-age=1, stale-while-revalidate");
-  res.end(`Hello! Go to item: <a href="${path}">${path}</a>`);
+  res.json([
+    {
+      id: 1,
+      name: "Margherita",
+      description: "Tomato sauce, mozzarella, organic oregano",
+      price: 16,
+      image: "src/app/assets/Margherita.jpeg",
+    },
+    {
+      id: 2,
+      name: "Stromboli",
+      description:
+        "Tomato sauce, mozzarella, fresh chillies, olives, organic oregano",
+      price: 18,
+      image: "src/app/assets/Margherita.jpeg",
+    },
+    {
+      id: 3,
+      name: "Napoli",
+      description:
+        "Tomato sauce, mozzarella, anchovies MSC, capers, organic oregano",
+      price: 19,
+      image: "src/app/assets/Margherita.jpeg",
+    },
+    {
+      id: 4,
+      name: "Funghi",
+      description: "Tomato sauce, mozzarella, fresh mushrooms, organic oregano",
+      price: 20,
+      image: "src/app/assets/Margherita.jpeg",
+    },
+  ]);
 });
 
-app.get("/api/item/:slug", (req, res) => {
-  const { slug } = req.params;
-  res.end(`Item: ${slug}`);
-});
+app.use(express.static("public"));
 
 module.exports = app;

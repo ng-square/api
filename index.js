@@ -1,4 +1,8 @@
-const app = require("express")();
+const express = require('express');
+const app = express();
+
+app.listen(process.env.PORT || 3000);
+app.use(express.static("public"));
 
 app.get("/api", (req, res) => {
   res.json([
@@ -35,6 +39,5 @@ app.get("/api", (req, res) => {
   ]);
 });
 
-app.use(express.static("public"));
 
 module.exports = app;

@@ -1,7 +1,8 @@
-const express = require('express');
+const express = require("express");
 const app = express();
+const cors = require("cors");
 
-app.listen(process.env.PORT || 3000);
+app.use(cors());
 app.use(express.static("public"));
 
 app.get("/api", (req, res) => {
@@ -39,5 +40,6 @@ app.get("/api", (req, res) => {
   ]);
 });
 
+app.listen(process.env.PORT || 3000);
 
 module.exports = app;

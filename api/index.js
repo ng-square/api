@@ -5,42 +5,40 @@ const cors = require("cors");
 app.use(cors());
 app.use(express.static("public"));
 
-app.get("/api/pizza", (req, res) => {
+app.get("/api/players", (req, res) => {
   res.json([
     {
-      id: 1,
-      name: "Margherita",
-      description: "Tomato sauce, mozzarella, organic oregano",
-      price: 16,
-      image: "src/app/assets/Margherita.jpeg",
+      id: 936851900,
+      lastName: "Wawrinka",
+      firstName: "Stan",
+      points: 16596,
+      classification: "N1"
     },
     {
-      id: 2,
-      name: "Stromboli",
-      description:
-        "Tomato sauce, mozzarella, fresh chillies, olives, organic oregano",
-      price: 18,
-      image: "src/app/assets/Margherita.jpeg",
+      id: 868023470,
+      lastName: "Stricker",
+      firstName: "Dominic",
+      points: 16324,
+      classification: "N1"
     },
     {
-      id: 3,
-      name: "Napoli",
-      description:
-        "Tomato sauce, mozzarella, anchovies MSC, capers, organic oregano",
-      price: 19,
-      image: "src/app/assets/Margherita.jpeg",
+      id: 743021270,
+      lastName: "Riedi",
+      firstName: "Leandro",
+      points: 15529,
+      classification: "N1"
     },
     {
-      id: 4,
-      name: "Funghi",
-      description: "Tomato sauce, mozzarella, fresh mushrooms, organic oregano",
-      price: 20,
-      image: "src/app/assets/Margherita.jpeg",
-    },
+      id: 497962860,
+      lastName: "Hüsler",
+      firstName: "Marc-Andrea",
+      points: 15427,
+      classification: "N1"
+    }
   ]);
 });
 
-app.post("/api/pizza", (req, res) => {
+app.post("/api/players", (req, res) => {
   res.status(200).send();
 });
 

@@ -42,6 +42,71 @@ app.post("/api/players", (req, res) => {
   res.status(200).send();
 });
 
+app.get("/api/tennis/legends", (req, res) => {
+  res.json([
+    {
+      firstName: "Roger",
+      lastName: "Federer",
+      nationality: "Swiss",
+      grandSlamWins: 20,
+    },
+    {
+      firstName: "Rafael",
+      lastName: "Nadal",
+      nationality: "Spanish",
+      grandSlamWins: 22,
+    },
+    {
+      firstName: "Novak",
+      lastName: "Djokovic",
+      nationality: "Serbian",
+      grandSlamWins: 24,
+    },
+    {
+      firstName: "Pete",
+      lastName: "Sampras",
+      nationality: "American",
+      grandSlamWins: 14,
+    },
+    {
+      firstName: "Bjorn",
+      lastName: "Borg",
+      nationality: "Swedish",
+      grandSlamWins: 11,
+    },
+    {
+      firstName: "Rod",
+      lastName: "Laver",
+      nationality: "Australian",
+      grandSlamWins: 11,
+    },
+    {
+      firstName: "Andre",
+      lastName: "Agassi",
+      nationality: "American",
+      grandSlamWins: 8,
+    },
+    {
+      firstName: "Jimmy",
+      lastName: "Connors",
+      nationality: "American",
+      grandSlamWins: 8,
+    },
+    {
+      firstName: "Ivan",
+      lastName: "Lendl",
+      nationality: "Czech-American",
+      grandSlamWins: 8,
+    },
+    {
+      firstName: "John",
+      lastName: "McEnroe",
+      nationality: "American",
+      grandSlamWins: 7,
+    },
+  ]);
+});
+
 app.listen(process.env.PORT || 3000);
 
 module.exports = app;

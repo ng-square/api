@@ -5,7 +5,7 @@ const cors = require("cors");
 app.use(cors());
 app.use(express.static("public"));
 
-app.get("/api/tennis/players", (req, res) => {
+app.get("/tennis/players", (req, res) => {
   res.json([
     {
       id: 936851900,
@@ -38,11 +38,11 @@ app.get("/api/tennis/players", (req, res) => {
   ]);
 });
 
-app.post("/api/tennis/players", (req, res) => {
+app.post("/tennis/players", (req, res) => {
   res.status(200).send();
 });
 
-app.get("/api/tennis/legends", (req, res) => {
+app.get("/tennis/legends", (req, res) => {
   res.json([
     {
       firstName: "Roger",
@@ -107,7 +107,11 @@ app.get("/api/tennis/legends", (req, res) => {
   ]);
 });
 
-app.get("/api/pizza", (req, res) => {
+app.post("/tennis/legends", (req, res) => {
+  res.status(200).send();
+});
+
+app.get("/pizza", (req, res) => {
   res.json([
     {
       id: 1,
@@ -142,7 +146,7 @@ app.get("/api/pizza", (req, res) => {
   ]);
 });
 
-app.post("/api/pizza", (req, res) => {
+app.post("/pizza", (req, res) => {
   res.status(200).send();
 });
 
